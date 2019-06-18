@@ -20,6 +20,7 @@ plugins {
 
 repositories {
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -71,16 +72,6 @@ tasks.register<Copy>("copyJarToWorkshopFolder") {
 
     from("build/libs/$modName.jar")
     into("$slayTheSpireInstallDir\\$modName\\content") // publish to Workshop folder
-}
-group = "Template"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.withType<KotlinCompile> {
